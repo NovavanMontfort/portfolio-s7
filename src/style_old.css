@@ -1,0 +1,539 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Fonts */
+@font-face {
+  font-family: "pressio";
+  src: url("../public/pressio.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "neuemontreal";
+  src: url("../public/neuemontreal.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "ivarheadliner";
+  src: url("../public/ivarheadliner.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "sprayletters";
+  src: url("../public/sprayletters.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  height: 100%;
+}
+
+:root {
+  font-family: "pressio", Arial, sans-serif;
+  font-weight: bold;
+  color: white;
+  background-color: #242424;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  color: inherit;
+  background-color: #000;
+}
+
+/* Three.js background */
+#three-container {
+  position: fixed;
+  overflow: hidden;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #242424;
+  z-index: 10;
+}
+
+/* Navbar */
+#navbar {
+  position: sticky;
+  font-family: neuemontreal;
+  top: 0;
+  z-index: 1000;
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1vh 3vw;
+  height: 60px;
+  color: white;
+}
+
+.nav-left,
+.nav-right {
+  display: flex;
+  gap: 2vw;
+  align-items: center;
+  font-size: 15px;
+}
+
+.nav-center {
+  text-align: center;
+}
+
+.nav-center img {
+  height: 40px;
+  width: auto;
+}
+
+#navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+}
+
+#navbar a:hover {
+  opacity: 0.7;
+}
+
+/* Main content wrapper */
+#website-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 15vh;
+  padding-left: 0.2vw;
+  padding-right: 0.2vw;
+  background-color: #000;
+  color: white;
+  z-index: 20;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1s ease;
+  box-sizing: border-box;
+  gap: 5px;
+}
+
+#slogan-text {
+  font-family: "neuemontreal", Arial, sans-serif;
+  font-size: 1vw;
+  text-align: center;
+  margin: 0 0 1em 0;
+  z-index: 10;
+  position: relative;
+}
+
+/* Montfort letters */
+#montfort {
+  font-size: 35vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0em;
+  letter-spacing: 0.001em;
+  user-select: none;
+  cursor: default;
+  text-align: center;
+  max-width: 98vw;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#montfort .letter {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+#montfort .letter:hover {
+  color: rgba(255, 255, 255, 0.2);
+  transition: color 0.6s ease;
+}
+
+#montfort .letter::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 91.5%;
+  height: 70%;
+  transform: translate(-50%, -51%) translateY(-1%);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  pointer-events: none;
+  overflow: visible;
+}
+
+#montfort .letter:hover::after {
+  opacity: 1;
+}
+
+/* Individuele achtergrond letters */
+#montfort .letter[data-img="public/M.png"]::after {
+  background-image: url("../public/M.png");
+  width: 92%;
+  height: 70%;
+}
+
+#montfort .letter[data-img="public/O_1.png"]::after {
+  background-image: url("../public/O_1.png");
+  width: 87.5%;
+  height: 72%;
+  transform: translate(-50%, -52%);
+}
+
+#montfort .letter[data-img="public/N.png"]::after {
+  background-image: url("../public/N.png");
+  width: 88.5%;
+  height: 70%;
+  top: 48.5%;
+  transform: translate(-50%, -50%);
+}
+
+#montfort .letter[data-img="public/T_1.png"]::after {
+  background-image: url("../public/T_1.png");
+  width: 100%;
+  height: 71%;
+  top: 48.6%;
+}
+
+#montfort .letter[data-img="public/F.png"]::after {
+  background-image: url("../public/F.png");
+  width: 85.5%;
+  height: 68%;
+  top: 48.8%;
+}
+
+#montfort .letter[data-img="public/O.png"]::after {
+  background-image: url("../public/O.png");
+  width: 87%;
+  height: 70%;
+  transform: translate(-50%, -52%);
+}
+
+#montfort .letter[data-img="public/R.png"]::after {
+  background-image: url("../public/R.png");
+  width: 91.1%;
+  height: 70%;
+  top: 48.5%;
+  transform: translate(-48.6%, -50%);
+}
+
+#montfort .letter[data-img="public/T.png"]::after {
+  background-image: url("../public/T.png");
+  width: 100%;
+  height: 71%;
+  top: 48.6%;
+}
+
+/* Quote section */
+#quote-section {
+  position: relative;
+  font-family: "ivarheadliner";
+  font-weight: normal;
+  font-size: 6.5vw;
+  text-align: center;
+  margin: 25vh auto 0 auto;
+  max-width: 80vw;
+  line-height: 0.9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#background-text {
+  font-family: "sprayletters", cursive, sans-serif;
+  font-size: 11vw;
+  color: #ff0733;
+  position: absolute;
+  top: 23%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  user-select: none;
+  pointer-events: none;
+  z-index: 0;
+  white-space: nowrap;
+}
+
+#vision-text {
+  font-family: "neuemontreal", Arial, sans-serif;
+  font-size: 1vw;
+  margin: 0 0 1em 0;
+  z-index: 10;
+  position: relative;
+}
+
+#quote-section p:not(#vision-text):not(#background-text) {
+  margin-top: 0;
+  position: relative;
+  z-index: 10;
+}
+
+/* Gallery wrapper */
+#skull-gallery-wrapper {
+  position: relative;
+  width: 100%;
+  height: auto;
+  font-family: sans-serif;
+  background-color: black;
+  overflow-x: hidden;
+}
+
+/* Gallery grid */
+#gallery {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 10vw;
+  gap: 1vw;
+  width: 100%;
+  margin: 5vh 0 10vh 0;
+  padding: 0 1vw;
+  box-sizing: border-box;
+}
+
+#gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  will-change: transform;
+  transition: transform 0.1s ease-out;
+}
+
+/* Gallery image layout */
+.img-1 {
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 5;
+}
+
+.img-2 {
+  grid-column: 3 / span 2;
+  grid-row: 1 / span 5;
+}
+
+.img-3 {
+  grid-column: 1 / span 4;
+  grid-row: 6 / span 3;
+}
+
+.img-5 {
+  grid-column: 1 / span 2;
+  grid-row: 9 / span 5;
+}
+
+.img-6 {
+  grid-column: 3 / span 2;
+  grid-row: 9 / span 5;
+}
+
+/* Skull container - FIXED VERSION */
+#skull-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  margin-top: 5vh;
+  z-index: 10;
+  overflow: hidden;
+  pointer-events: auto;
+}
+
+/* Footer */
+.thank-you-footer {
+  position: relative;
+  font-family: "Pressio", sans-serif;
+  width: 100%;
+  text-align: center;
+  margin-top: 1100px;
+  user-select: none;
+}
+
+.thank-you-main {
+  font-size: 35vw;
+  color: #c60000;
+  line-height: 1;
+}
+
+.thank-you-clip {
+  position: absolute;
+  top: 0.12em;
+  left: 0;
+  width: 100%;
+  font-size: 35vw;
+  color: #c60000;
+  line-height: 1;
+  clip-path: inset(75% 0 0 0);
+  pointer-events: none;
+}
+
+.thank-you-sec-clip {
+  position: absolute;
+  top: 0.19em;
+  left: 0;
+  width: 100%;
+  font-size: 35vw;
+  color: #c60000;
+  line-height: 1;
+  clip-path: inset(80% 0 0 0);
+  pointer-events: none;
+}
+
+/* * {
+  outline: 1px solid rgba(255,0,0,0.2);
+} */
+
+html,
+body,
+#website-content {
+  overflow-x: hidden !important;
+}
