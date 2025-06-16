@@ -143,7 +143,7 @@ function animate() {
 }
 animate();
 
-// RESPONSIVE
+// RESPONSIVE!
 window.addEventListener('resize', () => {
   const width = container.clientWidth;
   const height = container.clientHeight;
